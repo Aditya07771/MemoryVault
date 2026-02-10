@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Vertex Light Theme (Monochrome) */
+    --background: 0 0% 100%;
+    --vertex-bg: #FFFFFF;
+
+    --foreground: 0 0% 0%;
+    --foreground-muted: 240 5% 40%;
+
+    --primary: 0 0% 0%;
+    /* Black */
+    --secondary: 0 0% 40%;
+    /* Dark Grey */
+
+    --radius: 0.75rem;
+
+    /* Gradients (Subtle Light Mode) */
+    --gradient-primary: linear-gradient(135deg, #000000, #404040);
+    --gradient-glow: radial-gradient(circle, rgba(0, 0, 0, 0.05), transparent 70%);
+
+    /* Shadows */
+    --glow-cyan: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Soft grey shadow */
+    --glow-blue: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-black/[0.1];
+    /* Default border color for light mode */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-black font-sans antialiased;
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-black/[0.08] rounded-2xl transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:bg-white hover:border-black/[0.2] hover:shadow-lg transition-all duration-300;
+  }
+
+  .glass-navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #000000, #404040);
+  }
+
+  .btn-gradient {
+    @apply relative px-8 py-4 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300;
+    background: #000000;
+  }
+
+  .btn-gradient:hover {
+    @apply scale-[1.02] shadow-xl bg-neutral-900;
+  }
+
+  .btn-outline-glow {
+    @apply px-6 py-3 rounded-lg font-medium border border-black/20 text-black transition-all duration-300 bg-transparent;
+  }
+
+  .btn-outline-glow:hover {
+    @apply border-black bg-black/5;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-lg font-medium border border-black/10 text-black/70 transition-all duration-300;
+  }
+
+  .btn-ghost:hover {
+    @apply bg-black/5 text-black border-black/20;
+  }
+
+  .nav-link {
+    @apply relative text-[15px] font-medium text-vertex-gray transition-colors duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-black;
+  }
+
+  .section-label {
+    @apply text-sm font-bold tracking-[3px] text-black uppercase mb-4 inline-block;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold text-black leading-tight;
+  }
+
+  .feature-icon {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center border border-black/10;
+    background: #F4F4F5;
+    /* light grey */
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .orb {
+    @apply absolute rounded-full blur-[120px] pointer-events-none opacity-40;
+  }
+
+  .orb-purple {
+    background: radial-gradient(circle, rgba(200, 200, 200, 0.5), transparent 70%);
+    /* Light Grey/Silver */
+  }
+
+  .orb-indigo {
+    background: radial-gradient(circle, rgba(150, 150, 150, 0.3), transparent 70%);
+    /* Grey */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
