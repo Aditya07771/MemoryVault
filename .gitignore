@@ -1,0 +1,48 @@
+# --- OS & IDE ---
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.iml
+*.suo
+*.sln
+
+# --- Android ---
+.gradle/
+/local.properties
+/captures/
+.externalNativeBuild/
+.cxx/
+/build/
+/*/build/
+*.apk
+*.aar
+*.bundle
+
+# --- Node (FrontEnd & BackEnd) ---
+node_modules/
+dist/
+dist-ssr/
+bundle/
+out/
+.next/
+.nuxt/
+/artifacts/
+/cache/
+/types/
+/coverage/
+
+# --- Logs & Config ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.env
+.env.*
+!.env.example
+
+# --- Project Specific ---
+*.local
+.externalNativeBuild
+/.idea/
